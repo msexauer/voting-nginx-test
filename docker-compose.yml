@@ -1,13 +1,12 @@
-version: '2'
+version: '3.7'
 services:
-  nginx-proxy:
-    image: jwilder/nginx-proxy
-    ports:
-      - "80:80"
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-
-  whoami:
-    image: jwilder/whoami
+  web:
+    build: .
     environment:
-      - VIRTUAL_HOST=whoami.local
+     - VIRTUAL_HOST=web.local
+  proxy:
+    image: jwilder/nginx-proxy:alpine
+    ports:
+     - "80:80"
+    volumes:
+     - /var/run/docker.sock:/tmp/docker.sock:ro
