@@ -3,7 +3,7 @@ services:
   web:
     build: .
     environment:
-     - VIRTUAL_HOST=web.local
+     - VIRTUAL_HOST=wowee.com
   proxy:
     image: jwilder/nginx-proxy:alpine
     ports:
