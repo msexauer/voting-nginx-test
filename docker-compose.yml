@@ -3,7 +3,7 @@ services:
   web:
     build: .
     environment:
-     - VIRTUAL_HOST=wowee.com
+     - VIRTUAL_HOST=www.maxsexauer.com
   proxy:
     image: jwilder/nginx-proxy:alpine
     ports:
