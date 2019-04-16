@@ -8,6 +8,8 @@ services:
      - LETSENCRYPT_EMAIL=maximiliansexauer@gmail.com
   proxy:
     image: jwilder/nginx-proxy:alpine
+    environment:
+     - DHPARAM_GENERATION=false
     ports:
      - "80:80"
      - "443:443"
